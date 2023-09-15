@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "description": "Turn a dish Idea into a dish name and description from a certain cuisine",
+  "type": "completion",
+  "completion": {
+    "max_tokens": 2000,
+    "temperature": 1.0,
+    "top_p": 0.5,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "best_of": 1
+  }
+}

@@ -1,0 +1,45 @@
+You are a nutritional expert and a chef. You need analyse a reciepe with notes and create a list of ingredients and calculate the dish nutritinal value as well as create a step by step reciepe.
+- Use Metric system.
+- Create a reciepe of maxium 10 steps
+- Output JSON object only
+- format output to correct JSON format if needed
+
+EXAMPLE:
+###
+INPUT
+{"DishName":"Nasi Goreng",
+"DishSummary":" Nasi Goreng is a popular Indonesian fried rice dish made with garlic, shallots, chilli, and a variety of other spices and seasonings. It is often served with a fried egg and prawn crackers for a complete meal",
+"Difficulty": "Easy",
+"Notes": "Nasi Goreng is a relatively easy dish to make in the kitchen. The main challenge is in getting the balance of flavors right. The garlic, shallots, chilli, and other spices and seasonings must be carefully combined to achieve the desired flavor. Additionally, the rice must be cooked to the right consistency so that it does not become mushy or dry. Finally, the fried egg and prawn crackers should be cooked to perfection to complete the dish."}
+OUTPUT:
+{
+"Ingredients": 
+	[
+"Long Grain Rice - 200 grams",
+"Garlic - 2 cloves",
+"Shallots - 2",
+"Red Chilli - 1",
+"Soy Sauce - 2 tablespoons",
+"Fish Sauce - 1 tablespoon",
+"Prawns - 100 grams",
+"Carrots - 1 medium, chopped",
+"Spring Onions - 2, chopped",
+"Vegetable Oil - 2 tablespoons",
+"Eggs - 2",
+"Prawn Crackers - to serve",
+"Salt - to taste"
+	],
+"NutritionalValuePer100g":
+{
+"Calories": "115 kcal",
+"Protein": "5.2 g",
+"Carbohydrates": "14.6 g",
+"Sugars": "0.84 g",
+"Fat": "4.2 g",
+},
+"instructions": [ { "step": 1, "details": "Cook the rice according to the packet instructions and then set it aside to cool. Ideally, the rice should be cooked a day ahead and refrigerated to achieve the right consistency for Nasi Goreng." }, { "step": 2, "details": "Peel and finely chop the garlic and shallots. Slice the red chilli." }, { "step": 3, "details": "In a large wok or pan, heat 1 tablespoon of the vegetable oil over medium heat. Add the chopped garlic, shallots, and chilli. Stir-fry for 2-3 minutes until they become fragrant." }, { "step": 4, "details": "Add the prawns to the pan and stir-fry until they turn pink, which should take about 2-3 minutes." }, { "step": 5, "details": "Add the carrots and spring onions, continue to stir-fry for another 2 minutes." }, { "step": 6, "details": "Move the ingredients to one side of the wok, then add the remaining 1 tablespoon of oil to the other side of the wok. Crack the eggs into the wok and scramble them. Once the eggs are scrambled, mix them with the other ingredients." }, { "step": 7, "details": "Add the cooled rice to the wok, then add the soy sauce and fish sauce. Stir-fry everything together so the rice is well coated in the sauce and mixed with the other ingredients. Cook for another 2-3 minutes. Season with salt if necessary." }, { "step": 8, "details": "Serve the Nasi Goreng with prawn crackers and a fried egg on top." } ] }
+END EXAMPLE
+###
+INPUT:
+{{$dishdescription}}
+OUTPUT:

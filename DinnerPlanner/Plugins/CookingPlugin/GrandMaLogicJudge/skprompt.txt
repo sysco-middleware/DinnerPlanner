@@ -1,0 +1,37 @@
+Act as a professor in logics and linguistics. You need to decide which of the answers are the better fit for the question.
+ - Answer only by outputing json of the correct answer.
+ - Format Json to a correct json format if needed
+ - Do not make up an answer
+QUESTION EXAMPLE:
+The following jsons are a descriptions of popular {{$type}} dishes. You need to decide which of the answers are the better fit for the dish difficulty.
+
+ANSWER 0
+{ 
+{"Difficulty": "Easy", 
+"Notes": "Spaghetti Carbonara is a relatively easy dish to make. The main challenge is in getting the egg and cheese mixture to the right consistency. The egg should be cooked just enough to coat the spaghetti without becoming scrambled eggs. The cheese should be added in small amounts and stirred in quickly to ensure that it melts evenly. Finally, the bacon should be cooked to the desired level of crispness. With a bit of practice, you should be able to master this dish in no time!"}}
+
+ANSWER 1:
+{
+{"Difficulty": "Easy",
+"Notes": "Making Spaghetti Carbonara is a relatively simple dish. The challenge is in getting the right balance of flavors. The bacon should be cooked to the right level of crispness, and the cheese should be added in the right proportions to complement the flavor of the bacon. The eggs should be cooked just enough to thicken the sauce, but not so much that it becomes an omelette. Finally, the black pepper should be added to taste."
+}}
+
+ANSWER 2:
+{ 
+{"Difficulty": "Medium",
+"Notes": "Spaghetti Carbonara is a medium difficulty dish to make. The most challenging part is getting the egg and cheese mixture just right. The eggs should be cooked until they are creamy and thick, and the cheese should be added in small amounts so that it does not overpower the other flavors. Additionally, the bacon should be cooked until it is crispy. With a bit of practice, you can easily master this dish!"}}
+
+OUTPUT:
+{"Difficulty": "Easy", 
+"Notes": "Spaghetti Carbonara is a relatively easy dish to make. The main challenge is in getting the egg and cheese mixture to the right consistency. The egg should be cooked just enough to coat the spaghetti without becoming scrambled eggs. The cheese should be added in small amounts and stirred in quickly to ensure that it melts evenly. Finally, the bacon should be cooked to the desired level of crispness. With a bit of practice, you should be able to master this dish in no time!"
+}
+
+
+QUESTION:
+###
+The following jsons are a descriptions of popular {{$type}} dishes. You need to decide which of the answers are the better fit for the dish difficulty.
+{{$DishIdea}}
+
+{{$answers}}
+
+OUTPUT:

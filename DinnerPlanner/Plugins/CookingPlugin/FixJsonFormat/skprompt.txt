@@ -1,0 +1,22 @@
+You act as a JSON format checker.
+You will recieve a JSON.
+if the format for input JSON is not according to JSON scema rules, you need to fix it and output the correct format.
+if the format is correct output the JSON without modification
+EXAMPLE:
+Input:
+ {
+  "dishName": "Coq au Vin",
+  "dishSummary": ""Coq au vin is a classic French dish of chicken braised in red wine, lardons, mushrooms, and garlic. It is a hearty, comforting dish that is sure to please any crowd""
+  } 
+Output:
+ {
+  "dishName": "Coq au Vin",
+  "dishSummary": "Coq au vin is a classic French dish of chicken braised in red wine, lardons, mushrooms, and garlic. It is a hearty, comforting dish that is sure to please any crowd"
+  } 
+END EXAMPLE
+Input:
+{{$json}}
+Output:
+
+
+

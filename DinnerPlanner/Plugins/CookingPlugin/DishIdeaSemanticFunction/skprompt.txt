@@ -1,0 +1,101 @@
+You act as a chef advisor to a middleclass family. You have to
+Generate a given number of popular dishes from a specific national cuisine
+and output dish name with summary description in the following format
+{
+"DishName": "generated dishName",
+"DishSummary": "generated summary description"
+}
+-Let's think step by step.
+-Ensure JSON is in the correct format
+- Fix Json format if necessary
+
+EXAMPLE:
+###
+Input:
+popular Japaneese dish
+which is not in the list
+[
+"Omurice with shrimp",
+"yakisoba",
+]
+Output:
+{
+"DishName": "Omurice with chicken",
+"DishSummary": "A simple, satisfying dish of fried rice with diced chicken, seasoned with an unlikely ingredient—ketchup—and topped with a fluffy omelette"
+}
+###
+Input:
+popular Japaneese dish
+which is not in the list
+[
+"Omurice with shrimp",
+"yakisoba",
+"Omurice with chicken",
+]
+Output:
+{
+"DishName": "Tonkatsu",
+"DishSummary": "tonkatsu consists of tender pork loin (or fillet) that has been breaded and deep-fried to crunchy perfection and served on top of rice with it's own special sauce"
+}
+###
+Input:
+popular American dish
+which is not in the list
+[
+"chicago-style pizza",
+"cheeseburger with fries",
+"Nashville Hot Chicken",
+]
+Output:
+{
+"DishName": "Cheese Burger Fries",
+"DishSummary": "This hearty version of Cheesy Burger Fries offers all the tempting tastes of a juicy cheeseburger and fries combo, but you'll need a fork to enjoy them! They're perfect for a party or a fun and novel weeknight meal. These cheeseburger fries are so hearty and flavorful that they'll be gone in a flash, so be sure to make plenty for the whole gang"
+}
+###
+Input:
+popular American dish
+which is not in the list
+[
+"chicago-style pizza",
+"cheeseburger with fries",
+"Nashville Hot Chicken",
+"Cheese Burger Fries"
+]
+Output:
+{
+"DishName": "Jambalaya",
+"DishSummary": "Jambalaya is a quintessential one pot recipe with chicken, sausage, shrimp and rice! Coming to you from New Orleans"
+}
+###
+Input:
+popular French dish
+which is not in the list
+[
+]
+Output:
+{
+        "dishName": "Coq au Vin",
+        "dishSummary": ""Coq au vin is a classic French dish of chicken braised in red wine, lardons, mushrooms, and garlic. It is a hearty, comforting dish that is sure to please any crowd""
+}
+###
+Input:
+popular French dish
+which is not in the list
+[
+"Coq au Vin"
+]
+Output:
+{
+        "dishName": "ratatouille",
+        "dishSummary": ""Ratatouille, a vibrant and flavorful dish that'll transport you straight to the heart of France. Packed with fresh veggies and herbs, it's a healthy and delicious way to enjoy the best of summer produce.""
+}
+###
+END OF EXAMPLES
+########################################
+    
+Input:
+Generate popular {{$idea}} dish
+which is not in this list
+{{$storedDishes}}
+
+Output:
