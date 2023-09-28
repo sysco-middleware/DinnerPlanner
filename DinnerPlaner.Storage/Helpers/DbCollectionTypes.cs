@@ -10,6 +10,7 @@ namespace DinnerPlaner.Storage.Helpers
     {
         public const string GENERATEDCOUNTRIESCOLLECTION = "GeneratedCountries";
         public const string RECIEPECOLLECTION = "Recipe";
+        public const string QUESTIONANSWERCOLLECTION = "QuestionAnswer";
 
     }
 }

@@ -28,6 +28,17 @@ namespace DinnerPlanner.Controllers
             _reciepeRepository = reciepeRepository;
         }
 
+        [HttpPost]
+        [Route("question")]
+        [ProducesResponseType(typeof(IEnumerable<CompleteDish>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<QuestionAnswer>> AnswerQuestion(string question)
+        {
+
+            _logger.LogInformation($"Requested question with test {question}");
+            var qa = await _semanticKernel.AnswerQuestion(question);
+            return Ok(qa);
+        }
+
 
         [HttpPost]
         [Route("dishIdeas")]

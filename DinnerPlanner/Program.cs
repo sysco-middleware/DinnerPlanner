@@ -19,6 +19,7 @@ builder.Services.AddSingleton<DbClient>();
 builder.Services.Configure<DbConfig>(builder.Configuration.GetSection("MongoDbConfiguration"));
 builder.Services.AddSingleton<ReciepeRepository>();
 builder.Services.AddSingleton<GeneratedCountriesRepository>();
+builder.Services.AddSingleton<QuestionAnswerRepository>();
 
 
 builder.Services.AddCors(options =>

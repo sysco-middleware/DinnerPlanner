@@ -42,6 +42,20 @@ namespace DinnerPlanner.Services
             _pluginDirectory = Path.Combine(GetProjectDirectory(), "Plugins");
             _logger = logger;   
         }
+        public async Task<QuestionAnswer> AnswerQuestion(string question)
+        {
+            var questionAnswerSkill = _kernel.ImportSemanticSkillFromDirectory(_pluginDirectory, "QuestionAnswer");
+            var myContext1 = new ContextVariables();
+            myContext1.Set("question", question);
+            var result = await _kernel.RunAsync(myContext1, questionAnswerSkill["AnswerQuestion"]);
+            var qa = new QuestionAnswer()
+            {
+                Question = question,
+                Answer = result.Result,
+                Inserted = DateTime.UtcNow
+            };
+            return qa;
+        }
 
         public async Task<CompleteDish> GenerateDishIdeas(string dishType)
         {

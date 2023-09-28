@@ -10,6 +10,7 @@ namespace DinnerPlaner.Storage.MongoDb
         //TODO Split into local and prod DbClient 
         private readonly IMongoCollection<GeneratedContry> _generatedCounteriesCollection;
         private readonly IMongoCollection<Reciepe> _reciepeCollection;
+        private readonly IMongoCollection<QuestionAnswer> _questionAnswerCollection;
 
         public DbClient(IOptions<DbConfig> dbConfig)
         {
@@ -28,10 +29,12 @@ namespace DinnerPlaner.Storage.MongoDb
             var database = client.GetDatabase(dbConfig.Value.DatabaseName);
             _generatedCounteriesCollection = database.GetCollection<GeneratedContry>(DbCollectionTypes.GENERATEDCOUNTRIESCOLLECTION);
             _reciepeCollection = database.GetCollection<Reciepe>(DbCollectionTypes.RECIEPECOLLECTION);
+            _questionAnswerCollection = database.GetCollection<QuestionAnswer>(DbCollectionTypes.QUESTIONANSWERCOLLECTION);
         }
 
         public IMongoCollection<GeneratedContry> GetGeneratedCountriesDataCollection() => _generatedCounteriesCollection;
         public IMongoCollection<Reciepe> GetReciepeDataCollection() => _reciepeCollection;
+        public IMongoCollection<QuestionAnswer> GetQuestionAnswerDataCollection() => _questionAnswerCollection;
     }
 
 }
